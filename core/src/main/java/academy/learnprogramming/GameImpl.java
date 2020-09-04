@@ -18,7 +18,17 @@ public class GameImpl implements Game {
     private int remainingGuesses;
     private boolean validNumberRange = true;
 
+    // == contructors ==
+//    public GameImpl(NumberGenerator numberGenerator) {
+//        this.numberGenerator = numberGenerator;
+//    }
+
+
     // == public methods ==
+
+    public void setNumberGenerator(NumberGenerator numberGenerator) {
+        this.numberGenerator = numberGenerator;
+    }
 
     @Override
     public void reset() {
@@ -70,8 +80,8 @@ public class GameImpl implements Game {
             if (guess > number) {
                 biggest = guess - 1;
             }
-            if (guess < number){
-                smallest = guess +1;
+            if (guess < number) {
+                smallest = guess + 1;
             }
         }
         remainingGuesses--;
